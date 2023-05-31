@@ -5,5 +5,9 @@
 }
 
 label {
-    padding-left: 8px;
+    padding: 0 10px;
 }
+
+.react-icons {
+    vertical-align: middle;
+  }
