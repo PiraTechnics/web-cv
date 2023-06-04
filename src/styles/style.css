@@ -1,7 +1,7 @@
 .inputGroup {
-    max-width: 70vw;
-    margin: 10px 0px;
-    border: 2px solid lightgray;
+    border: 2px solid lightgrey;
+    border-radius: 2ch;
+    background-color: rgb(240, 240, 240);
 }
 
 label {
