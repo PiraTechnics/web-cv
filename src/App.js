@@ -1,4 +1,4 @@
-import ContactInfo from "./components/ContactInfo";
+import ContactForm from "./components/ContactForm";
 import EduInfo from "./components/EduInfo";
 import WorkInfo from "./components/WorkInfo";
 
@@ -7,7 +7,7 @@ import WorkInfo from "./components/WorkInfo";
 function App() {
   return (
     <div className="App">
-      <ContactInfo />
+      <ContactForm />
       <EduInfo />
       <WorkInfo />
     </div>
