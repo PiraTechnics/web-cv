@@ -58,11 +58,9 @@ class ContactForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
     this.setState({
       showContactInfo: true,
     });
-    //call the function/component to show the finished contact info here
     //this.resetForm();
   };
 
@@ -94,6 +92,7 @@ class ContactForm extends Component {
                   name="firstName"
                   value={firstName}
                   onChange={this.handleChange}
+                  required
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="formLastName">
@@ -103,6 +102,7 @@ class ContactForm extends Component {
                   name="lastName"
                   value={lastName}
                   onChange={this.handleChange}
+                  required
                 />
               </Form.Group>
             </Row>
@@ -124,6 +124,7 @@ class ContactForm extends Component {
                   value={email}
                   onChange={this.handleChange}
                   placeholder="person@mailserver.com"
+                  required
                 />
               </Form.Group>
             </Row>
@@ -136,6 +137,7 @@ class ContactForm extends Component {
                   value={addr1}
                   onChange={this.handleChange}
                   placeholder="1234 Main Street"
+                  required
                 />
               </Form.Group>
             </Row>
@@ -159,6 +161,7 @@ class ContactForm extends Component {
                   name="city"
                   value={city}
                   onChange={this.handleChange}
+                  required
                 />
               </Form.Group>
               <Form.Group as={Col} className="mb-3" controlId="formState">
@@ -168,6 +171,7 @@ class ContactForm extends Component {
                   name="usState"
                   value={usState}
                   onChange={this.handleChange}
+                  required
                 >
                   <option>Select State</option>
                   <option value="California">California</option>

@@ -1,5 +1,5 @@
 import ContactForm from "./components/ContactForm";
-import EduInfo from "./components/EduInfo";
+import EduForm from "./components/EduForm";
 import WorkInfo from "./components/WorkInfo";
 
 //Can pull stored data from localStorage here
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <ContactForm />
-      <EduInfo />
+      <EduForm />
       <WorkInfo />
     </div>
   );
