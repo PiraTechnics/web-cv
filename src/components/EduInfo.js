@@ -1,14 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Collapse from "react-bootstrap/Collapse";
+import { Col, Row } from "react-bootstrap";
 
-class EduInfo extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Edumacation goes here!</h1>
-        <h3>This is some kind of subtitle!</h3>
-      </div>
-    );
-  }
+function EduInfo({ education, show }) {
+  return (
+    <Container className="infoCard">
+      <Collapse in={show}>
+        <div>
+          <Row className="fs-3 text-decoration-underline fw-bold"></Row>
+        </div>
+      </Collapse>
+    </Container>
+  );
 }
 
 export default EduInfo;
