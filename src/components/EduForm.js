@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -12,21 +12,28 @@ function EduForm() {
     school: "",
     degree: "",
     field: "",
-    dateFrom: new Date().toLocaleString(),
-    dateTo: new Date().toLocaleString(),
-    graduated: false,
+    dateFrom: "",
+    dateTo: "",
+    graduated: true,
   });
+
+  const [eduInfo, showEduInfo] = useState(false);
+
+  const graduatedRef = useRef(null);
 
   function handleChange(e) {
     setEducation({
       ...education,
-      [e.target.name]: e.target.value,
+      [e.target.name]:
+        e.target.name === "graduated"
+          ? graduatedRef.current.checked
+          : e.target.value,
     });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert("you did it!");
+    // Make Edu Info visible
   }
 
   return (
@@ -74,7 +81,7 @@ function EduForm() {
             >
               <option value="Select">--- Select Degree --- </option>
               <option value="ged">GED</option>
-              <option value="high school">Diploma</option>
+              <option value="hs diploma">Diploma</option>
               <option value="associate">Associate's</option>
               <option value="bachelor">Bachelor's</option>
               <option value="graduate">Master's</option>
@@ -121,12 +128,22 @@ function EduForm() {
             <Form.Check
               name="graduated"
               label="Graduated?"
+              defaultChecked={true}
               value={education.graduated}
+              ref={graduatedRef}
               onChange={handleChange}
               className="position-absolute top-50"
             />
           </Form.Group>
         </Row>
+        <div className="mb-2">
+          <Button className="me-3" variant="outline-secondary" type="submit">
+            Submit
+          </Button>
+          <Button className="me-3" variant="outline-secondary" type="reset">
+            Reset
+          </Button>
+        </div>
       </Form>
     </Container>
   );
